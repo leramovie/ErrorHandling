@@ -29,8 +29,10 @@ final class NetworkImages {
             
             DispatchQueue.main.async {
                 switch result {
-                case let .failure(error):
+                case .failure(_):
                     print("Downloading failed with error")
+                    handleApiError(error: ApiError.emptyData)
+                    
                 case let .success(imageItems):
                     self.imageItems = imageItems
                 }
@@ -42,8 +44,11 @@ final class NetworkImages {
     
     func downloadImagesJSON(completion: @escaping (Result<[ImagesRealData], Error>) -> ()) {
         
-        let url =  URL(string: "https://images-api.nasa.gov/search?q=space&media_type=image&year_start=2019&year_end=2019")
-        guard let downloadURL = url else { return }
+        let url =  URL(string: "https://ima  ges-api.nasa.gov/search?q=space&media_type=image&year_start=2020&year_end=2021")
+        guard let downloadURL = url else {
+            throw handleApiError(error: ApiError.notFound)
+            
+        }
         let session = URLSession.shared
         session.dataTask(with: downloadURL) { data, response, error in
             
@@ -52,7 +57,8 @@ final class NetworkImages {
             }
             
             guard let data = data, error == nil else {
-                completion(.failure(error ?? DownloadError.emptyData))
+                completion(.failure(error ?? ApiError.emptyData))
+                
                 return
             }
             

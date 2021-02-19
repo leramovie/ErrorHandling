@@ -10,7 +10,7 @@ final class ImagesCollectionViewController: UICollectionViewController {
     
     private let reuseIdentifier = "ImageCollectionCell"
         
-    var networkData: NetworkImages = NetworkImages()
+    private var networkData: NetworkImages = NetworkImages()
     
     override func viewDidLoad() {
         super.viewDidLoad()

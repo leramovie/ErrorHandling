@@ -20,6 +20,7 @@
 		F9289FA725D97A2000530B5D /* NetworkImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9289FA625D97A2000530B5D /* NetworkImages.swift */; };
 		F9289FAF25D9940500530B5D /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9289FAD25D9940500530B5D /* ImageCollectionCell.swift */; };
 		F9289FB025D9940500530B5D /* ImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9289FAE25D9940500530B5D /* ImageCollectionCell.xib */; };
+		F9A881FB25DD0DFA00D698F2 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A881FA25DD0DFA00D698F2 /* Alerts.swift */; };
 		F9C7FF7625DC24C500D93A29 /* ImagesRealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7FF7525DC24C500D93A29 /* ImagesRealData.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		F9289FA625D97A2000530B5D /* NetworkImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImages.swift; sourceTree = "<group>"; };
 		F9289FAD25D9940500530B5D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		F9289FAE25D9940500530B5D /* ImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionCell.xib; sourceTree = "<group>"; };
+		F9A881FA25DD0DFA00D698F2 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F9C7FF7525DC24C500D93A29 /* ImagesRealData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRealData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 		F9289F9E25D9797F00530B5D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F9A881F925DD077900D698F2 /* Alerts */,
 				F9289FA325D979E000530B5D /* Errors.swift */,
 			);
 			path = Helpers;
@@ -150,6 +153,14 @@
 				F9289FAE25D9940500530B5D /* ImageCollectionCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F9A881F925DD077900D698F2 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				F9A881FA25DD0DFA00D698F2 /* Alerts.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		F9B830E825DBE0EC00C1E7F2 /* Model */ = {
@@ -281,6 +292,7 @@
 				F909A25F25D7E38800CFF8CC /* AppDelegate.swift in Sources */,
 				F9289F8F25D9330D00530B5D /* AlertService.swift in Sources */,
 				F9289F9C25D976BC00530B5D /* ImagesCollectionViewController.swift in Sources */,
+				F9A881FB25DD0DFA00D698F2 /* Alerts.swift in Sources */,
 				F9289FAF25D9940500530B5D /* ImageCollectionCell.swift in Sources */,
 				F909A26125D7E38800CFF8CC /* SceneDelegate.swift in Sources */,
 				F9289FA425D979E000530B5D /* Errors.swift in Sources */,
@@ -434,6 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489JK8PZ4S;
 				INFOPLIST_FILE = ErrorHandlingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489JK8PZ4S;
 				INFOPLIST_FILE = ErrorHandlingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
