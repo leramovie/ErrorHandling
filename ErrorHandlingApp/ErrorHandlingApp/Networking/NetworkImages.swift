@@ -44,10 +44,11 @@ final class NetworkImages {
     
     func downloadImagesJSON(completion: @escaping (Result<[ImagesRealData], Error>) -> ()) {
         
-        let url =  URL(string: "https://ima  ges-api.nasa.gov/search?q=space&media_type=image&year_start=2020&year_end=2021")
+        let url =  URL(string: "https://images-api.nasa.gov/search?q=space&media_type=image&year_start=2020&year_end=2021")
         guard let downloadURL = url else {
-            return
+            return handleApiError(error: ApiError.notFound)
         }
+        
         let session = URLSession.shared
         session.dataTask(with: downloadURL) { data, response, error in
             
@@ -56,8 +57,8 @@ final class NetworkImages {
             }
             
             guard let data = data, error == nil else {
-                completion(.failure(error as! Error))
-                
+                completion(.failure(error ?? ApiError.emptyData))
+                                
                 return
             }
             
