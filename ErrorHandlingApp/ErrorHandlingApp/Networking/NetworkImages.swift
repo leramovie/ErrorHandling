@@ -46,8 +46,7 @@ final class NetworkImages {
         
         let url =  URL(string: "https://ima  ges-api.nasa.gov/search?q=space&media_type=image&year_start=2020&year_end=2021")
         guard let downloadURL = url else {
-            throw handleApiError(error: ApiError.notFound)
-            
+            return
         }
         let session = URLSession.shared
         session.dataTask(with: downloadURL) { data, response, error in
@@ -57,7 +56,7 @@ final class NetworkImages {
             }
             
             guard let data = data, error == nil else {
-                completion(.failure(error ?? ApiError.emptyData))
+                completion(.failure(error as! Error))
                 
                 return
             }
