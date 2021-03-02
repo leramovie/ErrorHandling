@@ -1,0 +1,6 @@
+framework module Pods_ErrorHandlingApp {
+  umbrella header "Pods-ErrorHandlingApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
